@@ -1,35 +1,170 @@
 .greetingForm {
+    margin: 5px;
 }
 
 .inputAndButtonContainer {
+    display: flex;
+    gap: 10px
 }
 
 .error {
+    color: red;
+
 }
 
 .input {
+    width: 372px;
+    height: 36px;
+    border-radius: 5px;
+    border: 1px solid #D1D1D1;
+    outline: none;
+    font-size: 16px;
+    padding: 15px;
+
+}
+
+.input:focus {
+    cursor: auto;
+}
+
+.errorInput {
+    width: 372px;
+    height: 36px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid red;
+    padding: 15px;
+    font-size: 16px;
+}
+
+.button {
+    width: 78px;
+    height: 36px;
+    border-radius: 3px;
+    gap: 10px;
+    background-color: #0066CC;
+    color: #FFFFFF;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid #0066CC;
+     cursor: pointer;
+}
+
+.button:focus {
+ outline: none;
+    box-shadow: 0 0 0 4px #b8ccf8;
+}
+
+.button:active {
+
+}
+
+.button:disabled {
+    opacity: 0.5;
+    color: #d2d5db;
+    background: #06C;
+    cursor: not-allowed;
+}
+
+.text {
+    color: #00000080;
+    opacity: 0.5;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.greeting {
+    margin: 10px 0;
+
+}
+
+/*
+
+.greetingForm {
+    display: flex;
+    flex-direction: column;
+    flex-wrap:  wrap;
+    justify-content: space-around;
+    width: 50%;
+    height: 200px;
+
+}
+
+.inputAndButtonContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 80%;
+
+}
+
+.error {
+    font-size: 20px;
+    color:#cc0000;
+}
+
+.input {
+    outline: none;
+    width: 400px;
+    border: 0;
+    padding: 15px 20px;
+    border-radius: 5px;
+    background: #F5F7FB;
+    box-shadow: 0px 1px 2px 0px rgba(29, 33, 38, 0.10), 0px 5px 20px 0px rgba(29, 33, 38, 0.03);
+    font-size: 15px;
+
 }
 
 .input:focus {
 }
 
 .errorInput {
+    border: 1px solid red;
+    outline: none;
+    width: 400px;
+    padding: 15px 20px;
+    border-radius: 50px;
+    background: #F5F7FB;
+    box-shadow: 0px 1px 2px 0px rgba(29, 33, 38, 0.10), 0px 5px 20px 0px rgba(29, 33, 38, 0.03);
+    font-size: 15px;
+
 }
 
 .button {
+    width: 18%;
+    height: 50px;
+    margin-left: auto;
+    border-radius: 40px;
+    background: #06C;
+    font-size: 16px;
+    color: #FFF;
+    border: 0;
+    cursor: pointer;
 }
 
 .button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #b8ccf8;
+
 }
 
 .button:active {
+
 }
 
 .button:disabled {
+    color: #d2d5db;
+    background: #06C;
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .text {
+    font-size: 20px;
+    color: #00000080;
 }
 
 .greeting {
-}
+    font-size: 20px;
+    padding-top: 10px;
+}*/
