@@ -1,20 +1,34 @@
 .input:focus {
+    caret-color: white; /*  невидимый курсор у инпута в фокусе*/
 }
 
 .input {
+    outline: none;
+    width: 372px;
+    height: 36px;
+    border-radius: 5px;
+    border: 1px solid #D1D1D1;
+    padding: 5px;
 }
 
 .inputWrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 5px;
 }
 
 .superInput {
 }
 
 .errorInput {
+    border: 1px solid #CC1439;
 }
 
 .errorInput:focus {
+    cursor: auto;
 }
 
 .error {
+    font-size: 10px;
+    color: #CC1439;
 }
