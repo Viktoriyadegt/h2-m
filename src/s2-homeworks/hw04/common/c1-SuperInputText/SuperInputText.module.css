@@ -1,5 +1,6 @@
 .input:focus {
-    caret-color: white; /*  невидимый курсор у инпута в фокусе*/
+    /*caret-color: white;   невидимый курсор у инпута в фокусе*/
+    caret-color: #D1D1D1;
 }
 
 .input {

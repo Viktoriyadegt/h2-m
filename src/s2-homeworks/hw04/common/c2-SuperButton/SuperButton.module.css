@@ -3,17 +3,20 @@
     height: 30px;
     border-radius: 3px;
     font-size: 14px;
-    color: #fff;
+    color: #ffff;
     border: none;
 }
 
 .disabled {
     background-color: #004D99;
     opacity: 0.5;
+    color: #002E5C;
 }
 
 .secondary {
     color: #0066CC;
+    background-color: white;
+    border: 1px solid #0066CC;
 }
 
 .default {
