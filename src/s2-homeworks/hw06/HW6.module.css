@@ -1,5 +1,13 @@
 .buttonsContainer {
+    width: 280px;
+    padding-bottom: 120px;
+}
+
+.buttonsContainer :last-child {
+    margin-left: 30px;
 }
 
 .editableSpanContainer {
+    width: 280px;
+    height: 80px;
 }
