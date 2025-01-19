@@ -1,9 +1,31 @@
 .select {
+    width: 180px;
+    height: 24px;
+    padding-left: 10px;
+    line-height: 17px;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 1px solid #C2C2C2;
+    font-weight: 400;
+    cursor: pointer;
+    appearance: none;
+    flex-shrink: 0;
+    background-repeat: no-repeat, no-repeat;
+    background-position: calc(100% - 0.25em) 0.35em;
+    background-size: 0.85em auto;
+    background-image:  url('chevron-down.svg');
 }
 
 .select:focus {
+    outline: none;
+    border: 1px solid #000000;
 }
 
 
+.option {
+    border: rgba(194, 194, 194, 1);
+}
+
 .option:hover {
+    box-shadow: #C2C2C2 0px 14px 4px 0px;
 }
