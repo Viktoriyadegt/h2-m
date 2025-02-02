@@ -1,5 +1,5 @@
 import {initialPeople, UserType} from '../HW8'
-import User from "../User";
+
 
 type ActionType =
     | { type: 'sort'; payload: 'up' | 'down' }
