@@ -1,12 +1,13 @@
 .button {
-    width: 84px;
-    height: 30px;
+    min-width: 100px;
+    min-height: 30px;
     border-radius: 3px;
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     color: #ffff;
     border: none;
+    padding: 10px;
 
 }
 
