@@ -1,6 +1,6 @@
 .select {
     width: 180px;
-    height: 24px;
+    min-height: 24px;
     padding-left: 10px;
     line-height: 17px;
     font-size: 14px;
