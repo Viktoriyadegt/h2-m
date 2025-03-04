@@ -1,7 +1,16 @@
 .buttonsContainer {
+    display: flex;
+    gap: 20px;
 }
 
 .responseContainer {
+    display: flex;
+    min-width: 1022px;
+    height: 315px;
+    margin-top: 50px;
+    margin-left: 166px;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .imageContainer {
@@ -10,13 +19,26 @@
 .image {
 }
 
-.textContainer{
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    width: 510px;
+    gap: 10px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
 }
 
 .code {
+    font-size: 30px;
+    line-height: 37px;
 }
 
 .text {
+    font-size: 16px;
+    line-height: 19px;
 }
+
 .info {
+    font-size: 16px;
+    line-height: 19px;
 }
