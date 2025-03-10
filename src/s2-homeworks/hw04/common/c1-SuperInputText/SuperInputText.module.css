@@ -1,6 +1,7 @@
 .input:focus {
     /*caret-color: white;   невидимый курсор у инпута в фокусе*/
     caret-color: #D1D1D1;
+    border: 1px solid rgba(0, 102, 204, 1);
 }
 
 .input {
