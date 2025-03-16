@@ -1,6 +1,6 @@
 import React from 'react'
 import SuperSelect from '../../../hw07/common/c5-SuperSelect/SuperSelect'
-import {Pagination} from '@mui/material'
+import {Pagination, Stack} from '@mui/material'
 import s from './SuperPagination.module.css'
 
 export type SuperPaginationPropsType = {
@@ -16,29 +16,36 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
         page, itemsCountForPage, totalCount, onChange, id = 'hw15',
     }
 ) => {
-    const lastPage = 10 // пишет студент // вычислить количество страниц
+    const lastPage = Math.ceil(totalCount / itemsCountForPage)
+    // пишет студент // вычислить количество страниц
 
     const onChangeCallback = (event: any, page: number) => {
+        onChange(page, itemsCountForPage)
         // пишет студент
     }
 
     const onChangeSelect = (event: any) => {
+        onChange(page, +event.currentTarget.value)
         // пишет студент
     }
 
     return (
         <div className={s.pagination}>
-            <Pagination
-                id={id + '-pagination'}
-                sx={{
+            <Stack spacing={2}>
+                <Pagination
+                    id={id + '-pagination'}
+                    //sx={{width:'24',  height:'24'}}
                     // стили для Pagination // пишет студент
-                }}
-                page={page}
-                count={lastPage}
-                onChange={onChangeCallback}
-                hideNextButton
-                hidePrevButton
-            />
+                    size={'small'}
+                    page={page}
+                    count={lastPage}
+                    shape="rounded"
+                    onChange={onChangeCallback}
+                    color={"primary"}
+                    hideNextButton
+                    hidePrevButton
+                />
+            </Stack>
 
             <span className={s.text1}>
                 показать

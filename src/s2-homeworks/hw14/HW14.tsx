@@ -29,7 +29,6 @@ const HW14 = () => {
     const [isLoading, setLoading] = useState(false)
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<string[]>([])
-    console.log(searchParams)
 
     const sendQuery = (value: string) => {
         setLoading(true)

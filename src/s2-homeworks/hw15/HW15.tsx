@@ -5,14 +5,15 @@ import axios from 'axios'
 import SuperPagination from './common/c9-SuperPagination/SuperPagination'
 import {useSearchParams} from 'react-router-dom'
 import SuperSort from './common/c10-SuperSort/SuperSort'
+import {CircularProgress} from "@mui/material";
 
 /*
-* 1 - дописать SuperPagination
-* 2 - дописать SuperSort
-* 3 - проверить pureChange тестами
-* 3 - дописать sendQuery, onChangePagination, onChangeSort в HW15
-* 4 - сделать стили в соответствии с дизайном
-* 5 - добавить HW15 в HW5/pages/JuniorPlus
+* 1 - дописать SuperPagination +
+* 2 - дописать SuperSort +
+* 3 - проверить pureChange тестами +
+* 3 - дописать sendQuery, onChangePagination, onChangeSort в HW15 +
+* 4 - сделать стили в соответствии с дизайном +
+* 5 - добавить HW15 в HW5/pages/JuniorPlus +
 * */
 
 type TechType = {
@@ -28,11 +29,13 @@ type ParamsType = {
 }
 
 const getTechs = (params: ParamsType) => {
+
     return axios
         .get<{ techs: TechType[], totalCount: number }>(
             'https://samurai.it-incubator.io/api/3.0/homework/test3',
             {params}
         )
+
         .catch((e) => {
             alert(e.response?.data?.errorText || e.message)
         })
@@ -47,26 +50,30 @@ const HW15 = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
 
+
     const sendQuery = (params: any) => {
         setLoading(true)
         getTechs(params)
             .then((res) => {
+                let items = res!.data!.techs
                 // делает студент
 
-                // сохранить пришедшие данные
+                setTechs(items)
+                setTotalCount(res!.data!.totalCount)
 
-                //
+            })
+            .finally(() => {
+                setLoading(false)
             })
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
+        setPage(newPage)
+        setCount(newCount)
 
-        // setPage(
-        // setCount(
-
-        // sendQuery(
-        // setSearchParams(
+        sendQuery({page: newPage.toString(), count: newCount.toString()})
+        setSearchParams({page: newPage.toString(), count: newCount.toString()})
 
         //
     }
@@ -74,11 +81,11 @@ const HW15 = () => {
     const onChangeSort = (newSort: string) => {
         // делает студент
 
-        // setSort(
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
+        setSort(newSort)
+        setPage(1) // при сортировке сбрасывать на 1 страницу
 
-        // sendQuery(
-        // setSearchParams(
+        sendQuery({page: page.toString(), count: count.toString()})
+        setSearchParams()
 
         //
     }
@@ -107,7 +114,9 @@ const HW15 = () => {
             <div className={s2.hwTitle}>Homework #15</div>
 
             <div className={s2.hw}>
-                {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
+                {idLoading && <div id={'hw15-loading'} className={s.loading}>
+                    <CircularProgress size="108px"  />
+                </div>}
 
                 <SuperPagination
                     page={page}
