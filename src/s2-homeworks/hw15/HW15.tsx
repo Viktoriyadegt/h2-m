@@ -57,10 +57,6 @@ const HW15 = () => {
             .then((res) => {
                 let items = res!.data!.techs
                 // делает студент
-                if (sort[0] == '1') {
-                    items = [...items].reverse()
-                }
-
 
                 setTechs(items)
                 setTotalCount(res!.data!.totalCount)
@@ -88,8 +84,8 @@ const HW15 = () => {
         setSort(newSort)
         setPage(1) // при сортировке сбрасывать на 1 страницу
 
-        sendQuery({page: page.toString(), count: count.toString()})
-        setSearchParams({})
+        sendQuery({page: page.toString(), count: count.toString(), sort:newSort})
+        setSearchParams({page: page.toString(), count: count.toString(), sort:newSort})
 
         //
     }
