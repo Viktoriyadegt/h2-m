@@ -11,9 +11,9 @@ import {CircularProgress} from "@mui/material";
 * 1 - дописать SuperPagination +
 * 2 - дописать SuperSort +
 * 3 - проверить pureChange тестами +
-* 3 - дописать sendQuery, onChangePagination, onChangeSort в HW15 +
-* 4 - сделать стили в соответствии с дизайном +
-* 5 - добавить HW15 в HW5/pages/JuniorPlus +
+* 3 - дописать sendQuery, onChangePagination, onChangeSort в HW15
+* 4 - сделать стили в соответствии с дизайном
+* 5 - добавить HW15 в HW5/pages/JuniorPlus
 * */
 
 type TechType = {
@@ -57,6 +57,10 @@ const HW15 = () => {
             .then((res) => {
                 let items = res!.data!.techs
                 // делает студент
+                if (sort[0] == '1') {
+                    items = [...items].reverse()
+                }
+
 
                 setTechs(items)
                 setTotalCount(res!.data!.totalCount)
@@ -85,7 +89,7 @@ const HW15 = () => {
         setPage(1) // при сортировке сбрасывать на 1 страницу
 
         sendQuery({page: page.toString(), count: count.toString()})
-        setSearchParams()
+        setSearchParams({})
 
         //
     }
@@ -115,7 +119,7 @@ const HW15 = () => {
 
             <div className={s2.hw}>
                 {idLoading && <div id={'hw15-loading'} className={s.loading}>
-                    <CircularProgress size="108px"  />
+                    <CircularProgress size="108px"/>
                 </div>}
 
                 <SuperPagination
